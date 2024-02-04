@@ -1,0 +1,33 @@
+<!-- This is Day 22 of Learning JavaScript in 60 Days
+Our New Chapter has Start
+Chapter 8:- Event and Other DOM Properties -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML</title>
+</head>
+<body>
+    <span id="first">
+        <b>Hi</b>This is Span
+    </span>
+    <script>
+        let x = console.log(document.getElementsByTagName('span')[0]);
+        let y = console.dir(document.getElementsByTagName('span')[0]); //it shows span as an Object
+        console.log(x,y);
+        console.log(document.body.firstChild.nodeName);
+        console.log(document.body.firstElementChild.nodeName);
+        console.log(first.innerHTML);
+        first.innerHTML = "<i>My Name is Prajwal</i>"
+        console.log(first.outerHTML);
+        first.outerHTML = "<div>My Name is Prajwal</div>"
+        console.log(document.body.firstElementChild.outerHTML);
+        console.log(document.body.firstChild.data)
+        console.log(document.body.firstChild.nodeValue);
+
+// console.log(document.body.textContent);
+    </script>
+</body>
+</html>

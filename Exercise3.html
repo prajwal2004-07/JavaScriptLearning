@@ -1,0 +1,134 @@
+<!-- elment inneHTML is used to populate a div tag with HTML Search online about the
+method and create a website with a div tag combibing a random joke given an array of jokesfrom the Internet Your website should show the random joke on every reload mix length of your array should be 10 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Random Jokes Website</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        font-family: "Poppins", sans-serif;
+        box-sizing: border-box;
+      }
+      h1 {
+        margin-top: 5%;
+        margin-left: 40%;
+        color: gray;
+        font-weight: 600;
+        font-style: oblique;
+      }
+      div {
+        color: #090606;
+        font-size: 3.5vh;
+        font-weight: 700;
+        padding: 20px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="headTitile">Random Jokes Every Time</h1>
+    <section>
+      <div id="Jokes">
+      </div>
+    </section>
+    <script>
+      const jokes = [
+        "Why don't scientists trust atoms? Because they make up everything!",
+        "What did one ocean say to the other ocean? Nothing, they just waved.",
+        "Why did the scarecrow win an award? Because he was outstanding in his field!",
+        "How does a penguin build its house? Igloos it together!",
+        "Why did the math book look sad? Because it had too many problems.",
+        "What do you call fake spaghetti? An impasta!",
+        "Why don't skeletons fight each other? They don't have the guts!",
+        "How does a penguin build its house? Igloos it together!",
+        "Why did the bicycle fall over? It was two-tired!",
+        "What did one hat say to the other? Stay here, I'm going on ahead!",
+        "Why did the tomato turn red? Because it saw the salad dressing!",
+        "What's orange and sounds like a parrot? A carrot!",
+        "Why couldn't the bicycle stand up by itself? It was two-tired!",
+        "What did one plate say to another plate? Tonight, dinner's on me!",
+        "Why did the coffee file a police report? It got mugged!",
+        "What did one wall say to the other wall? I'll meet you at the corner!",
+        "Why don't you ever see elephants hiding in trees? Because they're so good at it!",
+        "How do you organize a space party? You planet!",
+        "Why did the golfer bring two pairs of pants? In case he got a hole in one!",
+        "What did one hat say to another? You stay here, I'll go on ahead!",
+        "Why did the scarecrow become a successful politician? Because he was outstanding in his field!",
+        "What do you get when you cross a snowman and a vampire? Frostbite!",
+        "How do you make a tissue dance? You put a little boogie in it!",
+        "Why did the bicycle fall over? Because it was two-tired!",
+        "What do you call a fish with no eyes? Fsh!",
+        "Why did the tomato turn red? Because it saw the salad dressing!",
+        "What do you get if you cross a snowman and a dog? Frostbite!",
+        "How do you catch a squirrel? Climb a tree and act like a nut!",
+        "Why don't oysters donate to charity? Because they are shellfish!",
+        "Why was the math book sad? Because it had too many problems!",
+        "What did the big flower say to the little flower? Hi, bud!",
+        "Why did the scarecrow win an award? Because he was outstanding in his field!",
+        "Why don't skeletons fight each other? They don't have the guts!",
+        "What do you call a fake noodle? An impasta!",
+        "How does a penguin build its house? Igloos it together!",
+        "Why don't scientists trust atoms? Because they make up everything!",
+        "What did one plate say to another plate? Tonight, dinner's on me!",
+        "Why don't you ever see elephants hiding in trees? Because they're so good at it!",
+        "How do you organize a space party? You planet!",
+        "What did one hat say to another? You stay here, I'll go on ahead!",
+        "Why did the scarecrow become a successful politician? Because he was outstanding in his field!",
+        "What do you get when you cross a snowman and a vampire? Frostbite!",
+        "How do you make a tissue dance? You put a little boogie in it!",
+        "Why did the bicycle fall over? Because it was two-tired!",
+        "What do you call a fish with no eyes? Fsh!",
+        "Why did the tomato turn red? Because it saw the salad dressing!",
+        "What do you get if you cross a snowman and a dog? Frostbite!",
+        "How do you catch a squirrel? Climb a tree and act like a nut!",
+        "Why don't oysters donate to charity? Because they are shellfish!",
+        "Why was the math book sad? Because it had too many problems!",
+        "What did the big flower say to the little flower? Hi, bud!",
+        "Why did the scarecrow win an award? Because he was outstanding in his field!",
+        "Why don't skeletons fight each other? They don't have the guts!",
+        "What do you call a fake noodle? An impasta!",
+        "How does a penguin build its house? Igloos it together!",
+        "Why don't scientists trust atoms? Because they make up everything!",
+        "What did one plate say to another plate? Tonight, dinner's on me!",
+        "Why don't you ever see elephants hiding in trees? Because they're so good at it!",
+        "How do you organize a space party? You planet!",
+        "What did one hat say to another? You stay here, I'll go on ahead!",
+        "Why did the scarecrow become a successful politician? Because he was outstanding in his field!",
+        "What do you get when you cross a snowman and a vampire? Frostbite!",
+        "How do you make a tissue dance? You put a little boogie in it!",
+        "Why did the bicycle fall over? Because it was two-tired!",
+        "What do you call a fish with no eyes? Fsh!",
+        "Why did the tomato turn red? Because it saw the salad dressing!",
+        "What do you get if you cross a snowman and a dog? Frostbite!",
+        "How do you catch a squirrel? Climb a tree and act like a nut!",
+        "Why don't oysters donate to charity? Because they are shellfish!",
+        "Why was the math book sad? Because it had too many problems!",
+        "What did the big flower say to the little flower? Hi, bud!",
+        "Why did the scarecrow win an award? Because he was outstanding in his field!",
+        "Why don't skeletons fight each other? They don't have the guts!",
+        "What do you call a fake noodle? An impasta!",
+        "How does a penguin build its house? Igloos it together!",
+        "Why don't scientists trust atoms? Because they make up everything!",
+        "What did one plate say to another plate? Tonight, dinner's on me!",
+        "Why don't you ever see elephants hiding in trees? Because they're so good at it!",
+        "How do you organize a space party? You planet!",
+        "What did one hat say to another? You stay here, I'll go on ahead!",
+        "Why did the scarecrow become a successful politician? Because he was outstanding in his field!",
+        "What do you get when you cross a snowman and a vampire? Frostbite!",
+        "How do you make a tissue dance? You put a little boogie in it!",
+        "Why did the bicycle fall over? Because it was two-tired!",
+        "What do you call a fish with no eyes? Fsh!",
+        "Why did the tomato turn red? Because it saw the salad dressing!",
+        "What do you get if you cross a snowman and a dog? Frostbite!",
+      ];
+
+      let randomJoke = jokes[Math.floor(Math.random() * 100 + 1)];
+      document.getElementById("Jokes").innerHTML = randomJoke;
+    </script>
+  </body>
+</html>
